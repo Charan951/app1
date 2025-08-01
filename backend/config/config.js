@@ -1,22 +1,20 @@
-const { Client } = require('pg');
 require('dotenv').config();
 
-const client = new Client({
-  connectionString: process.env.RENDERDB,
-  ssl: {
-    rejectUnauthorized: false,
+module.exports = {
+  development: {
+    username: process.env.DB_USER,
+    password: process.env.DB_PASSWORD,
+    database: process.env.DB_NAME,
+    host: process.env.DB_HOST,
+    port: process.env.DB_PORT,
+    dialect: "postgres"
   },
-});
-
-const connectToDB = async () => {
-  try {
-    await client.connect();
-    console.log('Successfully connected to Render Postgres DB');
-  } catch (err) {
-    console.error('Failed to connect to Render Postgres DB:', err.message);
+  production: {
+    username: process.env.DB_USER,
+    password: process.env.DB_PASSWORD,
+    database: process.env.DB_NAME,
+    host: process.env.DB_HOST,
+    port: process.env.DB_PORT,
+    dialect: "postgres"
   }
 };
-
-connectToDB();
-
-module.exports = client;
