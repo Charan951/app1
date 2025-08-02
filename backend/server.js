@@ -45,9 +45,6 @@ app.use('/api', settingsRoutes);
 app.use('/api', policyRoutes);
 app.use('/api', notificationRoutes);
 
-app.get('/',(req,res)=>{
-  res.send('banckend')
-});
 
 const PORT = process.env.PORT || 5000;
 
