@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = 'http://localhost:5000/api/feedbacks';
+const API_URL = 'https://app1-8-eqwt.onrender.com/api/feedbacks';
 
 axios.interceptors.response.use(
   response => response,

@@ -11,7 +11,7 @@ import {
 export default function LeaveItem({ leave, onStatusChange }) {
   const handleStatusUpdate = async (status) => {
     try {
-      await axios.put(`http://localhost:5000/api/leaves/${leave.id}/status`, { status });
+      await axios.put(`https://app1-8-eqwt.onrender.com/api/leaves/${leave.id}/status`, { status });
       onStatusChange(); // Refresh parent list
     } catch (err) {
       console.error("Update error:", err);

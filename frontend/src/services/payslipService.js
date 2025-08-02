@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = 'http://localhost:5000/api/payslips';
+const API_URL = 'https://app1-8-eqwt.onrender.com/api/payslips';
 
 // Get all payslips
 export const getPayslips = () => axios.get(`${API_URL}/get`);

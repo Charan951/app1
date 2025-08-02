@@ -22,7 +22,7 @@ export default function LeaveCalendar() {
   const [events, setEvents] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost:5000/api/leaves')
+    axios.get('https://app1-8-eqwt.onrender.com/api/leaves')
       .then(res => {
         const calendarEvents = res.data.map(leave => ({
           title: `${leave.leaveType} (${leave.status})`,

@@ -70,7 +70,7 @@ const endBreak = async () => {
   setBreakEnd(timeNow);
 
   try {
-    await axios.post('http://localhost:5000/api/break/end', {
+    await axios.post('https://app1-8-eqwt.onrender.com/api/break/end', {
       employeeId,
       date,
       breakEnd: timeNow

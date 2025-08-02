@@ -13,7 +13,7 @@ export default function AttendanceForm() {
     const date = new Date().toISOString().split("T")[0];
 
     try {
-      await axios.post('http://localhost:5000/api/attendance', {
+      await axios.post('https://app1-8-eqwt.onrender.com/api/attendance', {
         employeeId,
         date,
         clockInTime,

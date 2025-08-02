@@ -19,7 +19,7 @@ export default function AddHolidayForm() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('http://localhost:5000/api/holidays', {
+      await axios.post('https://app1-8-eqwt.onrender.com/api/holidays', {
         title, date, description
       });
       alert('Holiday added');

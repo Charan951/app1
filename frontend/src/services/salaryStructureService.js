@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API = "http://localhost:5000/api/salaries";
+const API = "https://app1-8-eqwt.onrender.com/api/salaries";
 
 
 export const getSalaries = () => axios.get(API);

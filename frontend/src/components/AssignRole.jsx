@@ -8,7 +8,7 @@ export default function AssignRole() {
 
   const handleAssign = async (e) => {
     e.preventDefault();
-    await axios.post('http://localhost:5000/api/assign-role', form);
+    await axios.post('https://app1-8-eqwt.onrender.com/api/assign-role', form);
     alert('Role assigned');
   };
 

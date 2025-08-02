@@ -43,7 +43,7 @@ const PayslipForm = () => {
     e.preventDefault();
     const netSalary =
       +form.basic + +form.hra + +form.conveyance + +form.medicalallowances + +form.specialallowances - (+form.proftax + +form.pf);
-    await axios.post('http://localhost:5000/api/payslips/create', {
+    await axios.post('https://app1-8-eqwt.onrender.com/api/payslips/create', {
       ...form,
       netSalary,
     });

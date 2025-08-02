@@ -22,13 +22,13 @@ const PayslipList = () => {
   const [salaryStructure, setSalaryStructure] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost:5000/api/payslips/get')
+    axios.get('https://app1-8-eqwt.onrender.com/api/payslips/get')
       .then(res => setPayslips(res.data))
       .catch(err => console.error('Failed to fetch payslips', err));
   }, []);
 
   useEffect(() => {
-    axios.get('http://localhost:5000/api/salaries')
+    axios.get('https://app1-8-eqwt.onrender.com/api/salaries')
       .then(res => setSalaryStructure(res.data))
       .catch(err => console.error('Failed to fetch payslips', err));
   }, []);

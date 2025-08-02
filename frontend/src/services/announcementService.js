@@ -1,5 +1,5 @@
 import axios from 'axios';
-const API_URL = 'http://localhost:5000/api/announcements';
+const API_URL = 'https://app1-8-eqwt.onrender.com/api/announcements';
 
 export const getAnnouncements = () => axios.get(API_URL);
 export const addAnnouncement = (data) => axios.post(API_URL, data);

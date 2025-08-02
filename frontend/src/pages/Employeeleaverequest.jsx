@@ -39,7 +39,7 @@ export default function LeaveManagement() {
 
   const applyLeave = async () => {
     try {
-      const response = await axios.post('http://localhost:5000/api/leave/add', {
+      const response = await axios.post('https://app1-8-eqwt.onrender.com/api/leave/add', {
         ...leaveData,
         employeeId
       });

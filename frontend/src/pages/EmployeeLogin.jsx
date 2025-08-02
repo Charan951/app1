@@ -19,7 +19,7 @@ export default function EmployeeLogin() {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:5000/api/auth/employee/login', {
+      const response = await axios.post('https://app1-8-eqwt.onrender.com/api/auth/employee/login', {
         username,
         password
       });

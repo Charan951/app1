@@ -30,7 +30,7 @@ export default function LeaveTable() {
 
   const fetchLeaveData = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/api/leave/get');
+      const response = await axios.get('https://app1-8-eqwt.onrender.com/api/leave/get');
       setLeaves(response.data);
     } catch (err) {
       console.error('Error fetching leave data:', err);

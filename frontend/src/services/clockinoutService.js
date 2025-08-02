@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const BASE_URL = 'http://localhost:5000/api/attendance';
+const BASE_URL = 'https://app1-8-eqwt.onrender.com/api/attendance';
 
 // Clock In
 export const clockIn = async ({ employeeId, date, clockInTime, location }) => {

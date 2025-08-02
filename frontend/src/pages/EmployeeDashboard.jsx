@@ -28,7 +28,7 @@ export default function EmployeeDashboard() {
 
     const fetchEmployeeData = async () => {
       try {
-        const response = await axios.get(`http://localhost:5000/api/employees/${employeeId}`, {
+        const response = await axios.get(`https://app1-8-eqwt.onrender.com/api/employees/${employeeId}`, {
           headers: { Authorization: `Bearer ${token}` }
         });
         setEmployeeData(response.data);

@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API = 'http://localhost:5000/api/breaks';
+const API = 'https://app1-8-eqwt.onrender.com/api/breaks';
 
 export const startBreak = async (employeeId) => {
   const date = new Date().toISOString().split('T')[0];

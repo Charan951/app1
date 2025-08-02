@@ -6,7 +6,7 @@ export default function AddRole() {
 
   const handleAddRole = async (e) => {
     e.preventDefault();
-    await axios.post('http://localhost:5000/api/roles', { name });
+    await axios.post('https://app1-8-eqwt.onrender.com/api/roles', { name });
     alert('Role created');
     setName('');
   };

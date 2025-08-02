@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = 'http://localhost:5000/api/leaves';
+const API_URL = 'https://app1-8-eqwt.onrender.com/api/leaves';
 
 // Apply for leave
 export const applyLeave = async (leaveData) => {

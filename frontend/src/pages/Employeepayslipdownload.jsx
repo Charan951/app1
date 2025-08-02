@@ -26,7 +26,7 @@ const EmployeePayslip = () => {
       return;
     }
 
-    fetch(`http://localhost:5000/api/payslips/${employeeId}`)
+    fetch(`https://app1-8-eqwt.onrender.com/api/payslips/${employeeId}`)
       .then((res) => {
         if (!res.ok) throw new Error('Error fetching payslips');
         return res.json();

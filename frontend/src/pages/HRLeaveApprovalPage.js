@@ -15,7 +15,7 @@ export default function HRLeaveApprovalPage() {
 
   const fetchLeaves = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/leaves");
+      const res = await axios.get("https://app1-8-eqwt.onrender.com/api/leaves");
       setLeaves(res.data);
     } catch (err) {
       console.error(err);

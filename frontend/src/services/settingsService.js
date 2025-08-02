@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = 'http://localhost:5000/api'; // adjust port if needed
+const API_URL = 'https://app1-8-eqwt.onrender.com/api'; // adjust port if needed
 
 // Holiday services
 export const addHoliday = (data) => axios.post(`${API_URL}/holidays`, data);
