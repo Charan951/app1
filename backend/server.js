@@ -2,57 +2,52 @@ require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
 const app = express();
+const db = require("./models");
+const employeeRoutes = require('./routes/employeeRoutes');
+const salaryRoutes = require("./routes/salaryStructureRoutes");
+const payslipRoutes = require('./routes/payslipRoutes');
+// const attendanceRoutes = require('./routes/attendanceRoutes');
+const breakRoutes = require('./routes/breakRoutes');
+const ClockinoutRoutes = require('./routes/clockin-clockoutRoutes');
+const AnnouncementRoutes = require('./routes/announcementRoutes');
+const Feedback = require('./routes/feedbackRoutes');
+const payrollRoutes = require('./routes/payrollRoutes');
+const appSettingRoutes = require('./routes/appSettingRoutes');
+const noticeRoutes = require('./routes/notice.routes');
+const settingsRoutes = require('./routes/settings.routes');
+const policyRoutes = require('./routes/policyRoutes');
+const notificationRoutes = require('./routes/notificationRoutes');
+const holidayRoutes = require('./routes/holidayRoutes');
+const employeeAuthRoutes = require('./routes/employeeAuthRoutes');
+const leaveRoutes = require('./routes/leaveRoutes'); 
+const { esES } = require("@mui/material/locale");
 
-// Middleware
+
 app.use(cors());
 app.use(express.json());
 
-// Import route modules
-const routes = {
-  auth: require("./routes/authRoutes"),
-  employeeAuth: require("./routes/employeeAuthRoutes"),
-  employees: require("./routes/employeeRoutes"),
-  salaries: require("./routes/salaryStructureRoutes"),
-  payslips: require("./routes/payslipRoutes"),
-  leave: require("./routes/leaveRoutes"),
-  breaks: require("./routes/breakRoutes"),
-  attendance: require("./routes/clockin-clockoutRoutes"),
-  announcements: require("./routes/announcementRoutes"),
-  feedbacks: require("./routes/feedbackRoutes"),
-  payrolls: require("./routes/payrollRoutes"),
-  appSettings: require("./routes/appSettingRoutes"),
-  holidays: require("./routes/holidayRoutes"),
-  notice: require("./routes/notice.routes"),
-  settings: require("./routes/settings.routes"),
-  policies: require("./routes/policyRoutes"),
-  notifications: require("./routes/notificationRoutes"),
-  // attendance: require("./routes/attendanceRoutes"), // Uncomment if needed
-};
+app.use("/api/auth", require("./routes/authRoutes"));
+app.use("/api/auth/employee", employeeAuthRoutes);
+app.use('/api/employees', employeeRoutes);
+app.use("/api/salaries", salaryRoutes);
+app.use('/api/payslips', payslipRoutes);
+app.use('/api/leave', leaveRoutes);
+// app.use('/api', attendanceRoutes);
+app.use('/api/break',breakRoutes);
+app.use('/api/attendance', ClockinoutRoutes);
+app.use('/api/announcements', AnnouncementRoutes);
+app.use('/api/feedbacks', Feedback);
+app.use('/api/payrolls', payrollRoutes);
+app.use('/api/settings', appSettingRoutes);
+app.use('/api/holidays', holidayRoutes)
+app.use('/api', noticeRoutes);
+app.use('/api', settingsRoutes);
+app.use('/api', policyRoutes);
+app.use('/api', notificationRoutes);
 
-// Route bindings
-app.use("/api/auth", routes.auth);
-app.use("/api/auth/employee", routes.employeeAuth);
-app.use("/api/employees", routes.employees);
-app.use("/api/salaries", routes.salaries);
-app.use("/api/payslips", routes.payslips);
-app.use("/api/leave", routes.leave);
-app.use("/api/break", routes.breaks);
-app.use("/api/attendance", routes.attendance);
-app.use("/api/announcements", routes.announcements);
-app.use("/api/feedbacks", routes.feedbacks);
-app.use("/api/payrolls", routes.payrolls);
-app.use("/api/settings", routes.appSettings);
-app.use("/api/holidays", routes.holidays);
-app.use("/api", routes.notice);
-app.use("/api", routes.settings);
-app.use("/api", routes.policies);
-app.use("/api", routes.notifications);
-
-app.use("/",(req,res)=>{
-  console.log("hi");
-});
 
 const PORT = process.env.PORT || 5000;
+
 app.listen(PORT, () => {
-  console.log(`✅ Server running on port ${PORT}`);
+  console.log(`Server is running on port ${PORT}`);
 });
