@@ -19,7 +19,8 @@ const policyRoutes = require('./routes/policyRoutes');
 const notificationRoutes = require('./routes/notificationRoutes');
 const holidayRoutes = require('./routes/holidayRoutes');
 const employeeAuthRoutes = require('./routes/employeeAuthRoutes');
-const leaveRoutes = require('./routes/leaveRoutes') 
+const leaveRoutes = require('./routes/leaveRoutes'); 
+const { esES } = require("@mui/material/locale");
 
 
 app.use(cors());
@@ -43,6 +44,10 @@ app.use('/api', noticeRoutes);
 app.use('/api', settingsRoutes);
 app.use('/api', policyRoutes);
 app.use('/api', notificationRoutes);
+
+app.get('/',(req,res)=>{
+  res.send('banckend')
+});
 
 const PORT = process.env.PORT || 5000;
 
