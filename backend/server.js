@@ -48,7 +48,10 @@ app.use("/api", routes.settings);
 app.use("/api", routes.policies);
 app.use("/api", routes.notifications);
 
-// Start server
+app.use("/",(req,res)=>{
+  console.log("hi");
+});
+
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`✅ Server running on port ${PORT}`);
